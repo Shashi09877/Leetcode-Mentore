@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LeetCode Mentor Pro</title>
+  <style>
+    /* RESET & DIMENSIONS */
+    * { box-sizing: border-box; }
+    html, body { 
+      width: 800px; 
+      height: 600px; 
+      margin: 0; 
+      padding: 0;
+      background: #0f172a; 
+      font-family: 'Inter', -apple-system, sans-serif;
+      overflow: hidden;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 20px;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    h2 { margin: 0; color: #38bdf8; font-size: 22px; }
+
+    /* CONTROLS AREA - 3 Column Grid for 6 Buttons */
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    /* ACTION BUTTONS */
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #fff;
+    }
+    button:hover { filter: brightness(1.2); transform: translateY(-1px); }
+
+    #getHintBtn { background: #f59e0b; }
+    #getFullBtn { background: #10b981; }
+    #getStepBtn { background: #3b82f6; }
+    #viewHistBtn { background: #6366f1; }
+    #favBtn { background: #ef4444; }
+    #viewFavBtn { background: #db2777; } /* Pink for favorites view */
+
+    select {
+      padding: 10px;
+      border-radius: 8px;
+      background: #1e293b;
+      color: #fff;
+      border: 1px solid #334155;
+    }
+
+    /* WIDE OUTPUT AREA */
+    .output-card {
+      flex-grow: 1;
+      background: #1e293b;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      padding: 15px;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    pre, #output-text {
+      margin: 0;
+      color: #e2e8f0;
+      font-size: 14px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* Custom Scrollbar */
+    .output-card::-webkit-scrollbar { width: 8px; }
+    .output-card::-webkit-scrollbar-thumb { background: #475569; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>🚀 LeetCode Mentor</h2>
+      <select id="languageSelect">
+        <option value="Python">Python</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Java">Java</option>
+        <option value="C++">C++</option>
+      </select>
+    </div>
+
+    <div class="controls">
+      <button id="getHintBtn">💡 Get Hint</button>
+      <button id="getFullBtn">📘 Explanation</button>
+      <button id="getStepBtn">📖 Step Solution</button>
+      <button id="viewHistBtn">📜 History</button>
+      <button id="favBtn">⭐ Favorite</button>
+      <button id="viewFavBtn">❤️ View Favs</button>
+    </div>
+
+    <div class="output-card">
+      <div id="output-text">Select a LeetCode problem and click a button to begin...</div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
