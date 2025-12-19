@@ -1,0 +1,12 @@
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# Chrome/Web metadata
+*.crx
+*.pem
+
+# Python/Backend (if you ever upload it here)
+__pycache__/
+.env
+venv/
